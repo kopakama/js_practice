@@ -9,12 +9,13 @@
         :pocket="pocket"
       />
     </div>
-    <Pagination
-      :current="currentPage"
-      :total="totalPhotos"
-      :per-page="perPage"
-      @page-changed="fetchPhotos"
-    ></Pagination>
+    <Paginate
+      :page-count="Math.ceil(state.pockets.length / 10)"
+      :click-handler="pageChangeHandler"
+      :prev-text="'Prev'"
+      :next-text="'Next'"
+      :container-class="'pagintaion'"
+    />
   </div>
 </template>
 
@@ -23,12 +24,15 @@
 import Header from "@/components/Header.vue";
 import Search from "@/components/Search.vue";
 import Pocket from "@/components/Pocket.vue";
-import Pagination from "@/components/Pagination.vue";
+
 import { useJsdelivrApi } from "./components/hooks/jsdelivr-api";
 
 export default {
   name: "app",
-  components: { Header, Search, Pocket, Pagination },
+  components: { Header, Search, Pocket },
+  methods: {
+    pageChangeHandler() {}
+  },
   setup() {
     const state = useJsdelivrApi();
 

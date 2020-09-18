@@ -96,7 +96,7 @@ export default {
   line-height: 20px;
   text-align: center;
   padding: 10px;
-  color: #000;
+  color: rgb(194, 141, 141);
   opacity: 0.6;
   transition: opacity 0.2s;
 }
@@ -104,5 +104,4 @@ export default {
 .package-buttons .button:hover {
   opacity: 1;
 }
-
 </style>
