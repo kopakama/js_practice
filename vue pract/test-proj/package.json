@@ -1,0 +1,33 @@
+{
+  "name": "test-proj",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@vue/composition-api": "^1.0.0-beta.14",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.17.0",
+    "composition-api": "0.0.0",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.3",
+    "vue-star-rating": "^1.6.1",
+    "vuejs-paginate": "^2.1.0",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "^4.5.6",
+    "@vue/cli-plugin-router": "^4.5.6",
+    "@vue/cli-service": "^4.5.6",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^1.19.1",
+    "vue-template-compiler": "^2.6.12"
+  }
+}
