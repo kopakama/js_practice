@@ -1,43 +1,41 @@
 <template>
-  <div class="container">
-    <div class="pocket">
-      <div class="pocket-header">
-        <div class="row">
-          <div class="col-sm-8 pocket-name-wrapper">
-            <a :href="pocket.homepage">{{ pocket.name }}</a>
-          </div>
-          <div class="col-sm-4">
-            <div class="package-buttons">
-              <a
-                class="button"
-                target="_blank"
-                rel="noopener"
-                :href="pocket.homepage"
-                title="Homepage"
-              >
-                <i class="fa fa-globe" aria-hidden="true"></i>
-              </a>
-              <a
-                class="button"
-                target="_blank"
-                rel="nofollow"
-                :href="pocket.github"
-                title="GitHub"
-              >
-                <i class="fab fa-github" aria-hidden="true"></i>
-              </a>
-            </div>
+  <div class="pocket">
+    <div class="pocket-header">
+      <div class="row">
+        <div class="col-sm-8 pocket-name-wrapper">
+          <a :href="pocket.homepage">{{ pocket.name }}</a>
+        </div>
+        <div class="col-sm-4">
+          <div class="package-buttons">
+            <a
+              class="button"
+              target="_blank"
+              rel="noopener"
+              :href="pocket.homepage"
+              title="Homepage"
+            >
+              <i class="fa fa-globe" aria-hidden="true"></i>
+            </a>
+            <a
+              class="button"
+              target="_blank"
+              rel="nofollow"
+              :href="pocket.github"
+              title="GitHub"
+            >
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="pocket-author">Author: {{ pocket.author }}</div>
-            <span class="pocket-label" :title="pocket.lastversion">
-              <i class="fa fa-tag" aria-hidden="true"></i>
-              {{ pocket.lastversion }}
-            </span>
-            <div class="pocket-description">{{ pocket.description }}</div>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="pocket-author">Author: {{ pocket.author }}</div>
+          <span class="pocket-label" :title="pocket.lastversion">
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            {{ pocket.lastversion }}
+          </span>
+          <div class="pocket-description">{{ pocket.description }}</div>
         </div>
       </div>
     </div>
@@ -54,6 +52,9 @@ export default {
 </script>
 
 <style scoped>
+.pocket:last-child .pocket-header {
+  border-bottom: none;
+}
 .pocket-name-wrapper a {
   color: #000;
   font-size: 20px;

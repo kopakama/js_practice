@@ -11,11 +11,13 @@
     ></b-pagination>
 
     <div class="pockets">
-      <Pocket
-        v-for="pocket in pocketsSlice"
-        :key="pocket.name"
-        :pocket="pocket"
-      />
+      <div class="container">
+        <Pocket
+          v-for="pocket in pocketsSlice"
+          :key="pocket.name"
+          :pocket="pocket"
+        />
+      </div>
     </div>
 
     <Footer
