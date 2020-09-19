@@ -91,12 +91,11 @@ export default {
   width: 40px;
   height: 40px;
   border: 1px solid #e5e5e5;
-  float: left;
   font-size: 20px;
   line-height: 20px;
   text-align: center;
   padding: 10px;
-  color: rgb(194, 141, 141);
+  color: #000;
   opacity: 0.6;
   transition: opacity 0.2s;
 }

@@ -2,19 +2,26 @@
   <div id="app">
     <Header :title="'Jsdelivr Search'" />
     <Search :search="state.search" @search="handleSearch" />
+    <b-pagination
+      v-model="currentPage"
+      :total-rows="rows"
+      :per-page="perPage"
+      align="center"
+      aria-controls="pockets"
+    ></b-pagination>
+
     <div class="pockets">
       <Pocket
-        v-for="pocket in state.pockets"
+        v-for="pocket in pocketsSlice"
         :key="pocket.name"
         :pocket="pocket"
       />
     </div>
-    <Paginate
-      :page-count="Math.ceil(state.pockets.length / 10)"
-      :click-handler="pageChangeHandler"
-      :prev-text="'Prev'"
-      :next-text="'Next'"
-      :container-class="'pagintaion'"
+
+    <Footer
+      :author="'Симаков Артем'"
+      :page="'https://vk.com/smkv_art'"
+      :github="'gf'"
     />
   </div>
 </template>
@@ -24,12 +31,13 @@
 import Header from "@/components/Header.vue";
 import Search from "@/components/Search.vue";
 import Pocket from "@/components/Pocket.vue";
+import Footer from "@/components/Footer.vue";
 
 import { useJsdelivrApi } from "./components/hooks/jsdelivr-api";
 
 export default {
   name: "app",
-  components: { Header, Search, Pocket },
+  components: { Header, Search, Pocket, Footer },
   methods: {
     pageChangeHandler() {}
   },
@@ -37,13 +45,27 @@ export default {
     const state = useJsdelivrApi();
 
     return {
+      perPage: 3,
+      currentPage: 1,
+      items: state.pockets,
+
       state,
       handleSearch(searchTerm) {
         state.loading = true;
         state.search = searchTerm;
-        console.log(state.pockets[0].name);
       }
     };
+  },
+  computed: {
+    pocketsSlice() {
+      return this.state.pockets.slice(
+        10 * (this.currentPage - 1),
+        10 * this.currentPage
+      );
+    },
+    rows() {
+      return this.state.pockets.length;
+    }
   }
 };
 </script>
@@ -70,6 +92,12 @@ export default {
 .green {
   color: green;
 }
+
+.pagination {
+  margin-top: 30px;
+  margin-bottom: 1.7rem;
+}
+
 @media screen and (max-width: 550px) {
   .min-width-160 {
     min-width: 160px;

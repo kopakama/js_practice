@@ -2,9 +2,6 @@
 <template>
   <header class="pad-15-hor pad-15-ver header">
     <div><img src="@/assets/logo.png" width="25px" /> {{ titleText }}</div>
-    <div>
-      <i class="fas fa-bars"></i>
-    </div>
   </header>
 </template>
 
@@ -22,6 +19,6 @@ export default {
 .header {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 </style>

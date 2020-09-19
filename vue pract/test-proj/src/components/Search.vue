@@ -5,8 +5,7 @@
         class="search-input"
         type="text"
         :value="libTitle"
-        @keyup="handleChange"
-        v-on:keyup.enter="handleSubmit"
+        @input="handleSubmit"
       />
     </div>
   </div>
@@ -24,11 +23,9 @@ export default {
     return {
       libTitle,
       handleSubmit(event) {
+        libTitle.value = event.target.value;
         event.preventDefault();
         emit("search", libTitle.value);
-      },
-      handleChange(event) {
-        libTitle.value = event.target.value;
       }
     };
   }
@@ -60,7 +57,7 @@ export default {
   width: 100%;
   display: block;
   padding: 18px 40px;
-  border: 1px solid #ff5627;
+  border: 1px solid #008cff;
   border-radius: 3px;
   outline: 0;
 }
