@@ -47,7 +47,7 @@ export default {
     const state = useJsdelivrApi();
 
     return {
-      perPage: 3,
+      perPage: 10,
       currentPage: 1,
       items: state.pockets,
 
