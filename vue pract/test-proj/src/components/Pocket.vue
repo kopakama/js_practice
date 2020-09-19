@@ -23,7 +23,7 @@
               :href="pocket.github"
               title="GitHub"
             >
-              <i class="fab fa-github" aria-hidden="true"></i>
+              <i class="fa fa-github" aria-hidden="true"></i>
             </a>
           </div>
         </div>
