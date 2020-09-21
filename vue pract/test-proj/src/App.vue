@@ -23,7 +23,7 @@
     <Footer
       :author="'Симаков Артем'"
       :page="'https://vk.com/smkv_art'"
-      :github="'gf'"
+      :github="'https://github.com/kopakama'"
     />
   </div>
 </template>
